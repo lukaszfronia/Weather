@@ -16,6 +16,20 @@ const visibilityValue = document.querySelector(".visibility");
 const pressureValue = document.querySelector(".pressure");
 const humidityValue = document.querySelector(".humidity");
 
+const data = document.querySelector(".data");
+const now = new Date();
+const options = {
+  hour: "numeric",
+  minute: "numeric",
+  day: "numeric",
+  month: "numeric",
+  year: "numeric",
+  weekday: "long",
+};
+//const locale = navigator.language;
+
+data.textContent = new Intl.DateTimeFormat("en-US", options).format(now);
+
 const weatherApp = {
   url: `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=25367dfb440f7b6539ae81db039573b8`,
   cc: search.value,

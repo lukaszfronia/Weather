@@ -50,7 +50,7 @@ const weatherApp = {
     if (weather === "Thunderstorm") {
       document.body.style.backgroundImage = "url(image5.jpg)";
     }
-    if (weather === "Mist" && weather === "Fog" && weather === "Smoke") {
+    if (weather === "Mist" || weather === "Fog" || weather === "Smoke") {
       document.body.style.backgroundImage = "url(image3.jpg)";
     }
   },

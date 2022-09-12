@@ -16,23 +16,24 @@ const visibilityValue = document.querySelector(".visibility");
 const pressureValue = document.querySelector(".pressure");
 const humidityValue = document.querySelector(".humidity");
 
-const data = document.querySelector(".data");
-const now = new Date();
-const options = {
-  hour: "numeric",
-  minute: "numeric",
-  day: "numeric",
-  month: "numeric",
-  year: "numeric",
-  weekday: "long",
-};
-//const locale = navigator.language;
+const dataNow = document.querySelector(".data");
+// const now = new Date();
 
-data.textContent = new Intl.DateTimeFormat("en-US", options).format(now);
+// const options = {
+//   hour: "numeric",
+//   minute: "numeric",
+//   day: "numeric",
+//   month: "numeric",
+//   year: "numeric",
+//   weekday: "long",
+// };
+// //const locale = navigator.language;
+
+// data.textContent = new Intl.DateTimeFormat("en-GB", options).format(now);
 
 const weatherApp = {
   url: `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=25367dfb440f7b6539ae81db039573b8`,
-  cc: search.value,
+
   bodyChanger(weather) {
     if (weather === "Clouds") {
       document.body.style.backgroundImage = "url(image2.jpg)";
@@ -80,6 +81,25 @@ const weatherApp = {
     pressureValue.innerHTML = `${pressure} hPa`;
 
     humidityValue.innerHTML = `${humidity} %`;
+
+    const time = data.timezone * 1000;
+    const now = new Date().getTime();
+    const offsetTime = now + time;
+    const currentDate = new Date(offsetTime - 7200000);
+
+    const options = {
+      hour: "numeric",
+      minute: "numeric",
+      day: "numeric",
+      month: "numeric",
+      year: "numeric",
+      weekday: "long",
+    };
+    //const locale = navigator.language;
+
+    dataNow.textContent = new Intl.DateTimeFormat("en-GB", options).format(
+      currentDate
+    );
 
     this.bodyChanger(data.weather[0].main);
   },

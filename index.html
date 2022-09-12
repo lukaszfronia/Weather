@@ -18,22 +18,36 @@
       defer
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script defer src="script.js"></script>
     <title>Weather</title>
   </head>
   <body>
     <div class="weather-box">
       <div class="weather-search-box">
-        <input class="weather-search-input" type="text" placeholder="search" />
-        <ion-icon class="icon-search" name="search-outline"></ion-icon>
+        <input
+          class="weather-search-input search"
+          type="text"
+          placeholder="search"
+        />
+        <ion-icon
+          class="icon-search btn-search"
+          name="search-outline"
+        ></ion-icon>
       </div>
       <div class="weather-details">
         <p class="detail-temp">19&deg;C</p>
-        <p class="detail-weather">Rain</p>
+        <div class="weather">
+          <img class="weather-icon" />
+          <p class="detail-weather">Rain</p>
+        </div>
         <p class="detail-minmax-temp">
           from <span class="min-temp">18&deg;C</span> to
           <span class="max-temp">21&deg;C</span>
         </p>
-        <h2 class="detail-name"><span>Krakow</span>&comma; <span>PL</span></h2>
+        <h2 class="detail-name">
+          <span class="city-name">Krakow</span>&comma;
+          <span class="country-name">PL</span>
+        </h2>
       </div>
       <div class="weather-main-details">
         <div class="weather-main">

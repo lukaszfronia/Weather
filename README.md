@@ -1,2 +1,2 @@
 # Weather
-https://lukaszfronia.github.io/Weather/
+https://weather-fronia.netlify.app

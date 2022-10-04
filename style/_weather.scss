@@ -1,0 +1,148 @@
+@use "./variables.scss" as *;
+
+@use "./mixins.scss" as *;
+
+%dsplay_flex_info {
+  display: flex;
+  flex-direction: column;
+}
+
+%display_block_info_main {
+  display: block;
+  align-self: center;
+}
+
+.weather-box {
+  max-width: 37rem;
+  margin: 4rem auto;
+
+  @include setFlex(column, 1.6rem);
+
+  border-radius: 12px;
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.184);
+  background-color: $weather-box-background;
+  padding: 3.2rem;
+
+  .weather-search {
+    @include setWidthandHeight(100%, 2rem);
+
+    @include setFlex(row, 1.6rem);
+
+    &-input {
+      height: 100%;
+
+      @include setFont(1.6rem);
+
+      color: $search-font-color;
+      border-radius: 14px;
+      padding: 1.2rem;
+      border: none;
+      background-color: $weather-box-background;
+
+      &::placeholder {
+        color: $search-font-color-placeholder;
+        @include setFont(1.4rem);
+      }
+    }
+
+    &-icon {
+      @include setWidthandHeight(24px, 24px);
+      cursor: pointer;
+    }
+  }
+  .data {
+    @include setFont(1.2rem);
+  }
+
+  .weather-details {
+    @include setWidthandHeight(100%, 100%);
+
+    @include setFlex(column, 0.3rem);
+
+    padding: 0 3.2rem;
+
+    .detail-temp {
+      @include setFont(3.4rem, 600);
+      letter-spacing: 2px;
+    }
+
+    .weather {
+      @include setFlex(row, 0.8rem);
+
+      &-detail {
+        @include setFont(0.7rem, 500);
+        text-transform: uppercase;
+      }
+    }
+    .temp-minmax {
+      @include setFont(0.9rem, 500);
+    }
+
+    .name-detail {
+      @include setFont(2.8rem, 500);
+      letter-spacing: 3px;
+    }
+  }
+
+  .weather-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.2rem;
+    column-gap: 1.8rem;
+    justify-items: center;
+
+    &-main {
+      @include setFont(1.2rem);
+      letter-spacing: 2px;
+
+      @include setWidthandHeight(12rem, 7rem);
+
+      padding: 1.2rem 0;
+
+      border-radius: 12px;
+      box-shadow: 0 24px 12px rgba(0, 0, 0, 0.232);
+      background-color: $weather-info-box;
+
+      @include setFlex(column, 1.2rem);
+
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &-icon {
+        @include setWidthandHeight(24px, 24px);
+      }
+      &-wind-speed {
+        @extend %dsplay_flex_info;
+
+        .wind-speed {
+          @extend %display_block_info_main;
+        }
+      }
+      &-visibility {
+        @extend %dsplay_flex_info;
+
+        .visibility {
+          @extend %display_block_info_main;
+        }
+      }
+      &-pressure {
+        @extend %dsplay_flex_info;
+
+        .pressure {
+          @extend %display_block_info_main;
+        }
+      }
+      &-humidity {
+        @extend %dsplay_flex_info;
+
+        .humidity {
+          @extend %display_block_info_main;
+        }
+      }
+    }
+  }
+}

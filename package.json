@@ -1,0 +1,25 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "https://weather-fronia.netlify.app",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukaszfronia/Weather.git"
+  },
+  "author": "Łukasz Fronia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukaszfronia/Weather/issues"
+  },
+  "homepage": "https://github.com/lukaszfronia/Weather#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0",
+    "sass": "^1.55.0"
+  }
+}

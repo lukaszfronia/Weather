@@ -14,7 +14,7 @@ body {
   font-size: 62.5%;
   color: var(--main-font-color);
 
-  background-image: url(image1.jpg);
+  background-image: url(../img/image1.jpg);
   background-size: cover;
 
   font-family: "Open Sans", sans-serif;

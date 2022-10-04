@@ -1,57 +1,48 @@
 "use strict";
-
+import img1 from "../img/image1.jpg";
+import img2 from "../img/image2.jpg";
+import img3 from "../img/image3.jpg";
+import img4 from "../img/image4.jpg";
+import img5 from "../img/image5.jpg";
+import img6 from "../img/image6.jpg";
 // VARIABLE
 
-const API_KEY = "25367dfb440f7b6539ae81db039573b8";
 const search = document.querySelector(".search");
 const btnSearch = document.querySelector(".btn-search");
 const curTemp = document.querySelector(".detail-temp");
-const weather = document.querySelector(".detail-weather");
-const minTemp = document.querySelector(".min-temp");
-const maxTemp = document.querySelector(".max-temp");
-const cityName = document.querySelector(".city-name");
-const countryName = document.querySelector(".country-name");
+const weather = document.querySelector(".weather-detail");
+const minTemp = document.querySelector(".temp-min");
+const maxTemp = document.querySelector(".temp-max");
+const cityName = document.querySelector(".name-city");
+const countryName = document.querySelector(".name-country");
 const windSpeedValue = document.querySelector(".wind-speed");
 const visibilityValue = document.querySelector(".visibility");
 const pressureValue = document.querySelector(".pressure");
 const humidityValue = document.querySelector(".humidity");
 
 const dataNow = document.querySelector(".data");
-// const now = new Date();
-
-// const options = {
-//   hour: "numeric",
-//   minute: "numeric",
-//   day: "numeric",
-//   month: "numeric",
-//   year: "numeric",
-//   weekday: "long",
-// };
-// //const locale = navigator.language;
-
-// data.textContent = new Intl.DateTimeFormat("en-GB", options).format(now);
 
 const weatherApp = {
   url: `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=25367dfb440f7b6539ae81db039573b8`,
 
   bodyChanger(weather) {
     if (weather === "Clouds") {
-      document.body.style.backgroundImage = "url(image2.jpg)";
+      document.body.style.backgroundImage = `url(${img2})`;
     }
     if (weather === "Clear") {
-      document.body.style.backgroundImage = "url(image1.jpg)";
+      document.body.style.backgroundImage = `url(${img1})`;
     }
     if (weather === "Snow") {
-      document.body.style.backgroundImage = "url(image4.jpg)";
+      document.body.style.backgroundImage = `url(${img4})`;
     }
     if (weather === "Rain" || weather === "Drizzle") {
-      document.body.style.backgroundImage = "url(image6.jpg)";
+      document.body.style.backgroundImage = `url(${img6})`;
     }
     if (weather === "Thunderstorm") {
-      document.body.style.backgroundImage = "url(image5.jpg)";
+      document.body.style.backgroundImage = `url(${img5})`;
     }
     if (weather === "Mist" || weather === "Fog" || weather === "Smoke") {
-      document.body.style.backgroundImage = "url(image3.jpg)";
+      document.body.style.backgroundImage = `url(${img3})`;
     }
   },
 
